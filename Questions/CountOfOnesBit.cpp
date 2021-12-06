@@ -5,10 +5,9 @@ int count1sBit(int number, int &ones)
 {
     while (number != 0)
     {
-        int lastBit = number & 1;
-        if (lastBit == 1)
+        if (number & 1)
             ones++;
-        number = number >> 1;
+        number >>= 1;
     }
     return ones;
 }
@@ -17,13 +16,13 @@ int main()
     int ones = 0;
     int a, b;
     cout << "Enter a: ";
-    cin >> a;
+    cin >> a; //2
     cout << "Enter b: ";
-    cin >> b;
+    cin >> b; //3
 
     count1sBit(a, ones);
     count1sBit(b, ones);
-    cout << "Count of bit 1 : " << ones << endl;
+    cout << "Count of bit 1 : " << ones << endl; //3
 
     return 0;
 }
