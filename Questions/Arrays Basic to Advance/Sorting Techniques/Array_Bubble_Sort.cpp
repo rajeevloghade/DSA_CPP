@@ -12,10 +12,16 @@ void bubbleSort(int arr[], int size)
     // 1 to (n-1)
     for (int i = 1; i < size; i++)
     {
+        int swapped = false;
         for (int j = 0; j < size; j++)
+        {
             //j=0 > j=1 -> swap
             if (arr[j] > arr[j + 1])
                 swap(arr[j], arr[j + 1]);
+            swapped = true;
+        }
+        if (swapped == false)
+            break;
     }
 }
 void printArray(int array[], int size)
@@ -33,6 +39,6 @@ int main()
     return 0;
 }
 /***
- * {7,9,1,2,3} => Sort it
+ * {7,9,1,2,3} => Bubble Sort it
  * {1,2,3,7,9} Answer
  * */
