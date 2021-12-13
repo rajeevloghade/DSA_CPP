@@ -6,7 +6,7 @@ void swap(int &numOne, int &numTwo)
     int temp = numOne;
     numOne = numTwo;
     numTwo = temp;
-}
+} 
 void selectionSort(int arr[], int size)
 {
     int minIndex = 0;
