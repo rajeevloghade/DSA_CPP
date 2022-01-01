@@ -27,14 +27,14 @@ bool pellindromeOfString(char name[], int size)
 
 char toLowercase(char ch)
 {
-    if (ch <= 'a' && ch >= 'z')
+    if (ch >= 'a' && ch <= 'z')
         return ch;
     else
         return ch - 'A' + 'a'; // Ascii(char) - 65 + 98;
 }
 char toUppercase(char ch)
 {
-    if (ch <= 'A' && ch >= 'Z')
+    if (ch >= 'A' && ch <= 'Z')
         return ch;
     else
         return ch + 'A' - 'a'; // Ascii(char) + 65 - 98;
