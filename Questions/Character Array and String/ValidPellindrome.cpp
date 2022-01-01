@@ -10,6 +10,13 @@ bool checkPellindrome(string name)
 
     return 1;
 }
+char toLowerCase(char ch)
+{
+    if ((ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <= '9'))
+        return ch;
+    else
+        return ch - 'A' + 'a';
+}
 bool isValidCharacter(char ch)
 {
     if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z') || (ch >= '0' && ch <= '9'))
@@ -21,10 +28,12 @@ bool validPellindrome(string name)
 {
     string temp = "";
     for (int i = 0; i < name.length(); i++)
-    {
         if (isValidCharacter(name[i]))
             temp.push_back(name[i]);
-    }
+
+    for (int i = 0; i < name.length(); i++)
+        temp[i] = toLowerCase(temp[i]);
+
     return checkPellindrome(temp);
 }
 int main()
