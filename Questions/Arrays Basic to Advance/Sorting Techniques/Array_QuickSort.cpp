@@ -20,19 +20,19 @@ int partition(int arr[], int start, int end)
 
     //placing pivot at right place
     int pivotIndex = start + count;
-    swap(arr[pivotIndex], pivot);
+    swap(arr[pivotIndex], arr[start]);
 
     //now sort left and right part of pivot
     int i = start, j = end;
     while (i < pivotIndex && j > pivotIndex)
     {
-        while (arr[i] < pivotIndex)
+        while (arr[i] <= pivot)
             i++;
-        while (arr[j] > pivotIndex)
-            j++;
+        while (arr[j] > pivot)
+            j--;
 
         if (i < pivotIndex && j > pivotIndex)
-            swap(arr[i], arr[j]);
+            swap(arr[i++], arr[j--]);
     }
     return pivotIndex;
 }
