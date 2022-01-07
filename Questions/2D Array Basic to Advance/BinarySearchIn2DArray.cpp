@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//APRROACH 1
+
 void print2DVector(vector<vector<int>> &matrix)
 {
     int row = matrix.size();
@@ -68,3 +70,6 @@ int main()
 
     return 0;
 }
+/**
+ * T.C : 0(log(mn))
+ * /
