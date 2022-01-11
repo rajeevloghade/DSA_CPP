@@ -5,18 +5,17 @@ bool binarySearch(int array[], int start, int size, int target)
 {
     int end = size - 1;
     //base case
-    if (start <= end)
-    {
-        //processing
-        int mid = start + (end - start) / 2;
-        if (array[mid] == target)
-            return true;
-        else if (target > array[mid])
-            return binarySearch(array, mid + 1, size, target); //recursive call
-        else
-            return binarySearch(array, 0, mid - 1, target);
-    }
-    return false;
+    if (start > end)
+        return false;
+
+    //processing
+    int mid = start + (end - start) / 2;
+    if (array[mid] == target)
+        return true;
+    else if (target > array[mid])
+        return binarySearch(array, mid + 1, size, target); //recursive call
+    else
+        return binarySearch(array, 0, mid - 1, target);
 }
 int main()
 {
